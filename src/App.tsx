@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Card } from "./types";
 import { cards } from "./data/cards";
 import CardComponent from "./components/CardComponent";
@@ -14,32 +14,6 @@ function App() {
   );
   const [activeKey, setActiveKey] = useState<"left" | "right" | null>(null);
   const [flashAnimation, setFlashAnimation] = useState(false);
-
-  const drawInitialCard = () => {
-    console.log("drawInitialCard called");
-    if (isDrawing) return; // Prevent multiple draws while animating
-
-    const availableCards = cards.filter((card) => !drawnCards.has(card.id));
-
-    if (availableCards.length === 0) {
-      // Don't reset - keep the last card visible
-      setIsDrawing(false);
-      return;
-    }
-
-    // Take the top card from the deck (first available card)
-    const newCard = availableCards[0];
-
-    console.log("Drawing card:", newCard.category);
-    // Show the card immediately
-    setCurrentCard(newCard);
-    setDrawnCards((prev) => new Set([...prev, newCard.id]));
-
-    // Reset drawing state after a short delay
-    setTimeout(() => {
-      setIsDrawing(false);
-    }, 100); // Short delay to prevent rapid clicking
-  };
 
   const drawToThreeRemaining = () => {
     if (isDrawing) return; // Prevent multiple draws while animating

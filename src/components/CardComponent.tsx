@@ -21,9 +21,6 @@ const CardComponent: React.FC<CardComponentProps> = ({
     return "";
   };
 
-  // Force animation by adding a key to trigger re-render
-  const animationKey = isDrawing ? "drawing" : "static";
-
   // Debug: Log animation state
   console.log("CardComponent render:", {
     isDrawing,
