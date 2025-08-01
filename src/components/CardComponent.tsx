@@ -51,7 +51,7 @@ const CardComponent: React.FC<CardComponentProps> = ({
         <div className="border-white/10 border p-6 rounded-md h-full">
           {/* Category Tag */}
           <div className="mb-6">
-            <span className="inline-block px-2 py-1 text-[10px] font-medium text-white/50 rounded-sm border border-white/10 uppercase tracking-wide">
+            <span className="inline-block px-2 py-1 text-[10px] font-medium text-white/50 rounded-sm border border-red-500 uppercase tracking-wide">
               {card.category}
             </span>
           </div>
